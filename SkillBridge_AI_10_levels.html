@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillBridge AI — Personalized Learning</title>
+<style>
+:root{--bg:#f5f7fb;--panel:#fff;--ink:#182238;--muted:#69758b;--line:#e6eaf2;--brand:#6257e8;--brand2:#887df7;--green:#159b72;--amber:#c58216;--red:#d94b62;--shadow:0 12px 32px rgba(30,42,80,.06)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button{font:inherit;cursor:pointer;border:0}.app{display:grid;grid-template-columns:248px 1fr;min-height:100vh}.sidebar{background:#fff;border-right:1px solid var(--line);padding:26px 16px;display:flex;flex-direction:column;gap:28px}.brand{display:flex;align-items:center;gap:11px;padding:0 9px;font-weight:800;font-size:19px;letter-spacing:-.5px}.logo{display:grid;place-items:center;width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:white;font-size:21px}.brand small{display:block;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:1.4px;margin-top:2px}.nav-label{font-size:10px;font-weight:800;letter-spacing:1.6px;color:#9aa4b7;padding:0 12px;margin-bottom:8px}.nav{display:grid;gap:5px}.nav button{background:transparent;text-align:left;padding:12px 13px;border-radius:11px;color:#6b758b;display:flex;gap:12px;align-items:center;font-weight:650;font-size:13px}.nav button.active,.nav button:hover{background:#f0efff;color:var(--brand)}.nav .ico{width:20px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;background:#f7f6ff;border:1px solid #eceaff;border-radius:15px;padding:16px}.side-bottom strong{font-size:13px}.side-bottom p{font-size:12px;color:var(--muted);line-height:1.5}.side-bottom button{background:var(--brand);color:#fff;border-radius:9px;padding:10px 12px;width:100%;font-weight:700;font-size:12px}.main{min-width:0}.topbar{height:82px;background:rgba(255,255,255,.86);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;position:sticky;top:0;z-index:2;backdrop-filter:blur(12px)}.crumb{font-size:13px;color:var(--muted)}.crumb strong{color:var(--ink)}.user{display:flex;align-items:center;gap:11px;font-size:13px;font-weight:700}.avatar{width:37px;height:37px;border-radius:50%;background:#e7e4ff;color:var(--brand);display:grid;place-items:center;font-weight:800}.content{max-width:1200px;margin:auto;padding:30px 34px 50px}.welcome{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:25px}.eyebrow{color:var(--brand);font-size:11px;letter-spacing:1.7px;font-weight:800;text-transform:uppercase}.welcome h1{font-size:29px;letter-spacing:-1px;margin:8px 0}.welcome p{color:var(--muted);margin:0;font-size:14px}.primary{background:var(--brand);color:#fff;border-radius:11px;padding:12px 17px;font-size:13px;font-weight:750;box-shadow:0 7px 15px #6257e82b}.primary:hover{background:#5146d3}.secondary{background:#f0efff;color:var(--brand);border-radius:10px;padding:10px 13px;font-size:12px;font-weight:750}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:20px}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;box-shadow:var(--shadow)}.stat{padding:18px}.stat-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:650}.stat-icon{width:35px;height:35px;border-radius:11px;background:#f0efff;color:var(--brand);display:grid;place-items:center;font-size:17px}.stat-value{font-size:28px;font-weight:800;letter-spacing:-1px;margin:12px 0 4px}.stat-note{font-size:11px;color:var(--muted)}.layout2{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-bottom:19px}.card{padding:22px;min-width:0}.card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:19px}.card h2{font-size:16px;margin:0;letter-spacing:-.3px}.card-head p{font-size:12px;color:var(--muted);margin:6px 0 0}.pill{font-size:10px;font-weight:800;padding:6px 9px;border-radius:99px;background:#f0efff;color:var(--brand)}.subject{margin:17px 0}.subject-line{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;margin-bottom:9px}.subject-line span:last-child{color:var(--muted)}.bar{height:8px;border-radius:99px;background:#edf0f6;overflow:hidden}.bar span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),#a59cff)}.subject-foot{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:7px}.rec{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.rec:last-child{border:0;padding-bottom:0}.rec-icon{width:39px;height:39px;flex-shrink:0;border-radius:12px;background:#f0efff;display:grid;place-items:center;font-size:18px}.rec strong{display:block;font-size:12px;margin:2px 0 5px}.rec p{font-size:11px;color:var(--muted);margin:0;line-height:1.45}.rec .tag{display:inline-block;color:var(--green);font-size:10px;font-weight:800;margin-top:7px}.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.activity{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.activity:last-child{border:0}.activity-icon{width:37px;height:37px;background:#f5f6fa;border-radius:11px;display:grid;place-items:center}.activity strong{font-size:12px;display:block}.activity small{font-size:11px;color:var(--muted)}.score{margin-left:auto;font-size:13px;font-weight:800}.empty{color:var(--muted);font-size:13px;padding:20px 0}.page{display:none}.page.active{display:block}.quiz-wrap{max-width:760px;margin:auto}.quiz-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin:14px 0}.question{font-size:23px;line-height:1.35;letter-spacing:-.5px;margin:20px 0}.options{display:grid;gap:10px}.option{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left;color:var(--ink);font-size:13px}.option:hover{border-color:var(--brand)}.option.selected{border-color:var(--brand);background:#f4f3ff}.option.correct{border-color:var(--green);background:#edfaf5}.option.wrong{border-color:var(--red);background:#fff0f2}.quiz-actions{display:flex;justify-content:space-between;align-items:center;margin-top:22px}.notice{font-size:12px;color:var(--muted)}.result{text-align:center;padding:25px}.result .big{font-size:52px;font-weight:850;color:var(--brand);letter-spacing:-2px}.result h2{font-size:22px}.result p{color:var(--muted);font-size:13px;line-height:1.6}.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.topic{padding:20px}.topic .emoji{font-size:25px}.topic h3{font-size:15px;margin:12px 0 6px}.topic p{font-size:12px;color:var(--muted);line-height:1.5}.topic button{margin-top:8px}.analysis-list{display:grid;gap:13px}.analysis-row{padding:17px;border:1px solid var(--line);border-radius:13px;display:flex;align-items:center;gap:15px}.analysis-row .grow{flex:1}.analysis-row strong{font-size:13px}.analysis-row p{font-size:11px;color:var(--muted);margin:5px 0 0}.status{font-size:10px;font-weight:800;border-radius:99px;padding:7px 10px;white-space:nowrap}.status.weak{color:var(--red);background:#fff0f2}.status.mid{color:var(--amber);background:#fff6e7}.status.strong{color:var(--green);background:#eaf9f3}.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.resource{border:1px solid var(--line);border-radius:13px;padding:17px}.resource h3{font-size:13px}.resource p{font-size:12px;color:var(--muted);line-height:1.5}.resource a{font-size:12px;color:var(--brand);font-weight:750;text-decoration:none}.toast{position:fixed;bottom:22px;right:22px;background:#1c2540;color:#fff;padding:13px 17px;border-radius:12px;font-size:13px;box-shadow:var(--shadow);display:none;z-index:5}.mobile-menu{display:none}
+@media(max-width:1000px){.app{grid-template-columns:205px 1fr}.stats{grid-template-columns:repeat(2,1fr)}.layout2{grid-template-columns:1fr}.topic-grid,.resource-grid{grid-template-columns:repeat(2,1fr)}.content{padding:25px 20px}.topbar{padding:0 20px}}
+@media(max-width:680px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{height:65px;padding:0 16px}.content{padding:22px 14px}.welcome{align-items:flex-start;flex-direction:column}.welcome h1{font-size:25px}.stats{gap:10px}.stat{padding:14px}.stat-value{font-size:24px}.bottom-grid,.topic-grid,.resource-grid{grid-template-columns:1fr}.card{padding:17px}.user span:not(.avatar){display:none}.mobile-menu{display:inline-block;background:#f0efff;color:var(--brand);padding:8px 10px;border-radius:8px;margin-right:8px}.nav-mobile{display:none;background:white;padding:10px;border-bottom:1px solid var(--line)}.nav-mobile.show{display:grid;grid-template-columns:repeat(2,1fr);gap:5px}.nav-mobile button{text-align:left;background:#f7f7fb;padding:10px;border-radius:8px;color:var(--ink);font-size:12px}.analysis-row{align-items:flex-start;flex-wrap:wrap}.status{margin-left:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">✦</div><div>SkillBridge AI<small>LEARN SMARTER</small></div></div>
+  <div><div class="nav-label">WORKSPACE</div><nav class="nav" id="sideNav">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+    <button data-page="subjects"><span class="ico">▤</span>Subjects</button>
+    <button data-page="quiz"><span class="ico">✓</span>Take a quiz</button>
+    <button data-page="gaps"><span class="ico">◉</span>Skill-gap analysis</button>
+    <button data-page="recommendations"><span class="ico">✧</span>Recommendations</button>
+    <button data-page="resources"><span class="ico">▱</span>Learning resources</button>
+    <button data-page="progress"><span class="ico">↗</span>My progress</button>
+  </nav></div>
+  <div class="side-bottom"><strong>Small steps, big growth.</strong><p>Your next skill is closer than you think. Keep learning a little every day.</p><button onclick="navigate('quiz')">Start learning →</button></div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="crumb"><button class="mobile-menu" onclick="toggleMobile()">☰</button>Workspace / <strong id="crumbName">Dashboard</strong></div><div class="user"><span class="avatar">S</span><span>Student workspace</span></div></header>
+<div class="nav-mobile" id="mobileNav">
+<button onclick="navigate('dashboard')">Dashboard</button><button onclick="navigate('subjects')">Subjects</button><button onclick="navigate('quiz')">Take a quiz</button><button onclick="navigate('gaps')">Skill-gap analysis</button><button onclick="navigate('recommendations')">Recommendations</button><button onclick="navigate('resources')">Resources</button><button onclick="navigate('progress')">Progress</button>
+</div>
+<div class="content">
+<section class="page active" id="page-dashboard">
+<div class="welcome"><div><div class="eyebrow">YOUR PERSONAL LEARNING SPACE</div><h1>Learn at your own pace ✨</h1><p>Discover your strengths, close your skill gaps, and keep moving forward.</p></div><button class="primary" onclick="startQuiz()">＋ Start a skill assessment</button></div>
+<div class="stats">
+<div class="stat"><div class="stat-top">Quizzes completed <span class="stat-icon">✓</span></div><div class="stat-value" id="statQuizzes">0</div><div class="stat-note">Assessments finished</div></div>
+<div class="stat"><div class="stat-top">Average score <span class="stat-icon">◉</span></div><div class="stat-value" id="statAverage">—</div><div class="stat-note">Across all completed quizzes</div></div>
+<div class="stat"><div class="stat-top">Skills to improve <span class="stat-icon">↗</span></div><div class="stat-value" id="statImprove">3</div><div class="stat-note">Personalized growth areas</div></div>
+<div class="stat"><div class="stat-top">Learning streak <span class="stat-icon">⚡</span></div><div class="stat-value">1 day</div><div class="stat-note">Every session counts</div></div>
+</div>
+<div class="layout2">
+<div class="card"><div class="card-head"><div><h2>Your skill overview</h2><p>See where you are today</p></div><span class="pill">LIVE PROFILE</span></div><div id="dashboardSkills"></div></div>
+<div class="card"><div class="card-head"><div><h2>Recommended for you</h2><p>Next best steps based on your results</p></div><button class="secondary" onclick="navigate('recommendations')">View all</button></div><div id="dashboardRecs"></div></div>
+</div>
+<div class="bottom-grid">
+<div class="card"><div class="card-head"><div><h2>Recent activity</h2><p>Your latest learning sessions</p></div></div><div id="recentActivity"></div></div>
+<div class="card"><div class="card-head"><div><h2>How SkillBridge works</h2><p>A simple path to better skills</p></div></div>
+<div class="rec"><div class="rec-icon">①</div><div><strong>Assess your skills</strong><p>Answer short quizzes to understand what you already know.</p></div></div>
+<div class="rec"><div class="rec-icon">②</div><div><strong>Find your skill gaps</strong><p>See which topics need practice and which are your strengths.</p></div></div>
+<div class="rec"><div class="rec-icon">③</div><div><strong>Follow your learning path</strong><p>Get suggested next steps based on your results.</p></div></div>
+</div>
+</div>
+</section>
+<section class="page" id="page-subjects">
+<div class="welcome"><div><div class="eyebrow">EXPLORE YOUR CURRICULUM</div><h1>Subjects & skills</h1><p>Choose a subject and test your understanding.</p></div></div>
+<div class="topic-grid" id="subjectCards"></div>
+</section>
+<section class="page" id="page-quiz">
+<div class="welcome"><div><div class="eyebrow">QUICK SKILL CHECK</div><h1>Knowledge check</h1><p>Answer the questions and get instant feedback.</p></div></div>
+<div class="card quiz-wrap" id="quizPanel"><div class="card-head"><div><h2>Choose a subject to begin</h2><p>Short quizzes with personalized results.</p></div></div><div class="topic-grid" id="quizChoices"></div></div>
+</section>
+<section class="page" id="page-gaps">
+<div class="welcome"><div><div class="eyebrow">UNDERSTAND YOUR NEXT STEP</div><h1>Skill-gap analysis</h1><p>Your scores reveal what to practice next. Take quizzes to personalize this view.</p></div><button class="primary" onclick="startQuiz()">Take a quiz →</button></div>
+<div class="card"><div class="card-head"><div><h2>Topic-level performance</h2><p>Needs improvement: below 50% · Developing: 50–79% · Strong: 80% and above</p></div></div><div class="analysis-list" id="gapList"></div></div>
+</section>
+<section class="page" id="page-recommendations">
+<div class="welcome"><div><div class="eyebrow">YOUR NEXT BEST STEP</div><h1>Personalized recommendations</h1><p>Practical actions tailored to your current skill level.</p></div></div>
+<div class="card"><div class="card-head"><div><h2>Suggested learning path</h2><p>Recommendations update automatically after each quiz.</p></div></div><div id="allRecs"></div></div>
+</section>
+<section class="page" id="page-resources">
+<div class="welcome"><div><div class="eyebrow">KEEP BUILDING</div><h1>Learning resources</h1><p>Free resources to strengthen your foundations and explore further.</p></div></div>
+<div class="resource-grid">
+<div class="resource"><div class="rec-icon">🐍</div><h3>Python for Beginners</h3><p>Learn variables, loops, functions, and the fundamentals of Python.</p><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noreferrer">Open Python tutorial ↗</a></div>
+<div class="resource"><div class="rec-icon">➗</div><h3>Khan Academy Math</h3><p>Practice algebra, probability, statistics, and more at your own pace.</p><a href="https://www.khanacademy.org/math" target="_blank" rel="noreferrer">Explore math lessons ↗</a></div>
+<div class="resource"><div class="rec-icon">🧩</div><h3>Visualgo</h3><p>Explore sorting, searching, trees, and other data structures visually.</p><a href="https://visualgo.net/" target="_blank" rel="noreferrer">Explore visualizations ↗</a></div>
+<div class="resource"><div class="rec-icon">🎓</div><h3>freeCodeCamp</h3><p>Practice programming with interactive lessons and projects.</p><a href="https://www.freecodecamp.org/learn/" target="_blank" rel="noreferrer">Start practicing ↗</a></div>
+<div class="resource"><div class="rec-icon">📚</div><h3>W3Schools</h3><p>Quick references and examples for common programming concepts.</p><a href="https://www.w3schools.com/" target="_blank" rel="noreferrer">Browse tutorials ↗</a></div>
+<div class="resource"><div class="rec-icon">💡</div><h3>Study strategy</h3><p>Try a short study session, practice questions, then review mistakes.</p><a href="#" onclick="navigate('recommendations');return false">View my learning path →</a></div>
+</div>
+</section>
+<section class="page" id="page-progress">
+<div class="welcome"><div><div class="eyebrow">YOUR GROWTH, AT A GLANCE</div><h1>My progress</h1><p>Review your completed assessments and watch your confidence grow.</p></div><button class="primary" onclick="startQuiz()">＋ New quiz</button></div>
+<div class="stats"><div class="stat"><div class="stat-top">Quizzes completed</div><div class="stat-value" id="progressQuizzes">0</div></div><div class="stat"><div class="stat-top">Average score</div><div class="stat-value" id="progressAverage">—</div></div><div class="stat"><div class="stat-top">Best result</div><div class="stat-value" id="progressBest">—</div></div><div class="stat"><div class="stat-top">Subjects explored</div><div class="stat-value" id="progressSubjects">0</div></div></div>
+<div class="card"><div class="card-head"><div><h2>Assessment history</h2><p>Results are saved in this browser on this device.</p></div><button class="secondary" onclick="clearHistory()">Clear history</button></div><div id="historyList"></div></div>
+</section>
+</div>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const subjects = {
+ Python:{emoji:"🐍",color:"#e8f7f0",description:"Build your programming foundations.",topics:["Variables & data types","Conditionals & loops","Functions & collections"]},
+ Mathematics:{emoji:"➗",color:"#fff4e5",description:"Strengthen your problem-solving toolkit.",topics:["Algebra","Probability & statistics","Calculus basics"]},
+ "Data Structures":{emoji:"🧩",color:"#f0efff",description:"Understand how data is organized and processed.",topics:["Arrays & linked lists","Stacks, queues & trees","Searching & sorting"]}
+};
+const questions = {
+ Python:[
+ {q:"Which Python keyword is used to define a function?",opts:["function","def","fun","define"],a:1,why:"In Python, the `def` keyword starts a function definition.",topic:"Variables & data types"},
+ {q:"What is the result of 3 * 2 ** 2 in Python?",opts:["36","18","12","24"],a:2,why:"Exponentiation happens before multiplication: 3 × 4 = 12.",topic:"Conditionals & loops"},
+ {q:"Which data type stores key-value pairs?",opts:["List","Tuple","Dictionary","String"],a:2,why:"A dictionary stores values associated with unique keys.",topic:"Functions & collections"},
+ {q:"Which loop is commonly used to iterate over a list?",opts:["repeat","foreach","for","loop"],a:2,why:"A `for` loop iterates through items in an iterable such as a list.",topic:"Conditionals & loops"},
+ {q:"What does len([4, 7, 9]) return?",opts:["2","3","4","7"],a:1,why:"The list contains three items, so len() returns 3.",topic:"Functions & collections"}
+ ],
+ Mathematics:[
+ {q:"Solve: 3x + 5 = 20. What is x?",opts:["3","5","7","15"],a:1,why:"Subtract 5 from both sides, then divide 15 by 3. x = 5.",topic:"Algebra"},
+ {q:"A fair coin is flipped once. What is the probability of heads?",opts:["1/4","1/3","1/2","1"],a:2,why:"There are two equally likely outcomes, so heads has probability 1/2.",topic:"Probability & statistics"},
+ {q:"What is the mean of 2, 4, and 9?",opts:["4","5","6","15"],a:1,why:"The mean is (2 + 4 + 9) / 3 = 5.",topic:"Probability & statistics"},
+ {q:"What is the slope of y = 4x + 2?",opts:["2","4","6","x"],a:1,why:"In y = mx + b, m represents the slope. Here m = 4.",topic:"Algebra"},
+ {q:"What is the derivative of x²?",opts:["x","2x","x³","2"],a:1,why:"Using the power rule, the derivative of x² is 2x.",topic:"Calculus basics"}
+ ],
+ "Data Structures":[
+ {q:"Which data structure follows FIFO order?",opts:["Stack","Queue","Tree","Graph"],a:1,why:"A queue is first-in, first-out (FIFO).",topic:"Stacks, queues & trees"},
+ {q:"Which structure follows LIFO order?",opts:["Queue","Array","Stack","Linked list"],a:2,why:"A stack is last-in, first-out (LIFO).",topic:"Stacks, queues & trees"},
+ {q:"What is the average time complexity of binary search on a sorted array?",opts:["O(n)","O(log n)","O(n²)","O(1) always"],a:1,why:"Binary search halves the search space each step, giving O(log n) time.",topic:"Searching & sorting"},
+ {q:"Which structure stores elements in contiguous indexed positions?",opts:["Array","Tree","Graph","Queue only"],a:0,why:"Arrays typically store elements in contiguous memory and allow indexed access.",topic:"Arrays & linked lists"},
+ {q:"Which sorting algorithm repeatedly swaps adjacent out-of-order elements?",opts:["Merge sort","Binary search","Bubble sort","Hashing"],a:2,why:"Bubble sort compares adjacent elements and swaps them when needed.",topic:"Searching & sorting"}
+ ]
+};
+let history = JSON.parse(localStorage.getItem("skillbridgeHistory") || "[]");
+let quizSubject="Python", qIndex=0, answers=[], submitted=false;
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function save(){localStorage.setItem("skillbridgeHistory",JSON.stringify(history));}
+function notify(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";setTimeout(()=>t.style.display="none",2600);}
+function navigate(page){
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ const target=document.getElementById("page-"+page);if(target)target.classList.add("active");
+ document.querySelectorAll("#sideNav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+ const names={dashboard:"Dashboard",subjects:"Subjects",quiz:"Take a quiz",gaps:"Skill-gap analysis",recommendations:"Recommendations",resources:"Learning resources",progress:"My progress"};
+ document.getElementById("crumbName").textContent=names[page]||"Dashboard";
+ document.getElementById("mobileNav").classList.remove("show");
+ renderAll();window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll("#sideNav button").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.page)));
+function toggleMobile(){document.getElementById("mobileNav").classList.toggle("show")}
+function startQuiz(subject){
+ quizSubject=subject||"Python";qIndex=0;answers=[];submitted=false;navigate("quiz");renderQuiz();
+}
+function renderQuiz(){
+ const panel=document.getElementById("quizPanel");
+ if(!quizSubject){panel.innerHTML=`<div class="card-head"><div><h2>Choose a subject to begin</h2><p>Select one of the learning areas below.</p></div></div><div class="topic-grid" id="quizChoices"></div>`;renderQuizChoices();return;}
+ const qs=questions[quizSubject];
+ if(submitted){const score=answers.filter((a,i)=>a===qs[i].a).length;const pct=Math.round(score/qs.length*100);panel.innerHTML=`<div class="result"><div class="eyebrow">ASSESSMENT COMPLETE</div><div class="big">${pct}%</div><h2>${pct>=80?"Excellent work!":pct>=50?"Good start — keep going!":"Every expert starts somewhere."}</h2><p>You answered <strong>${score} of ${qs.length}</strong> questions correctly in ${esc(quizSubject)}.<br>${pct<50?"Focus on the foundations and try another practice session.":pct<80?"Review the questions you missed to build confidence.":"You’re showing strong understanding. Try a more advanced challenge next."}</p><button class="primary" onclick="saveResult(${score},${qs.length},${pct})">Save result & see analysis</button> <button class="secondary" onclick="startQuiz('${quizSubject}')">Try again</button><div style="text-align:left;margin-top:24px">${qs.map((q,i)=>`<div class="rec"><div class="rec-icon">${answers[i]===q.a?"✓":"↻"}</div><div><strong>${i+1}. ${esc(q.q)}</strong><p>Your answer: ${esc(q.opts[answers[i]]??"Not answered")} · Correct answer: ${esc(q.opts[q.a])}</p><p>${esc(q.why)}</p></div></div>`).join("")}</div></div>`;return;}
+ const q=qs[qIndex];
+ panel.innerHTML=`<div class="card-head"><div><h2>${subjects[quizSubject].emoji} ${esc(quizSubject)} assessment</h2><p>Question ${qIndex+1} of ${qs.length}</p></div><span class="pill">+ SKILL POINTS</span></div><div class="bar"><span style="width:${(qIndex/qs.length)*100}%"></span></div><div class="quiz-meta"><span>Topic: ${esc(q.topic)}</span><span>${Math.round(qIndex/qs.length*100)}% complete</span></div><h2 class="question">${qIndex+1}. ${esc(q.q)}</h2><div class="options">${q.opts.map((o,i)=>`<button class="option ${answers[qIndex]===i?"selected":""}" onclick="chooseOption(${i})"><strong style="color:var(--brand);margin-right:10px">${String.fromCharCode(65+i)}.</strong>${esc(o)}</button>`).join("")}</div><div class="quiz-actions"><span class="notice">Choose one answer to continue.</span><button class="primary" onclick="nextQuestion()">${qIndex===qs.length-1?"Finish quiz":"Next question →"}</button></div>`;
+}
+function renderQuizChoices(){const el=document.getElementById("quizChoices");if(!el)return;el.innerHTML=Object.keys(subjects).map(s=>`<div class="topic card"><div class="emoji">${subjects[s].emoji}</div><h3>${esc(s)}</h3><p>${esc(subjects[s].description)}</p><button class="secondary" onclick="startQuiz('${s}')">Start quiz →</button></div>`).join("");}
+function chooseOption(i){answers[qIndex]=i;renderQuiz();}
+function nextQuestion(){if(answers[qIndex]===undefined){notify("Please select an answer first.");return;}if(qIndex<questions[quizSubject].length-1){qIndex++;renderQuiz();}else{submitted=true;renderQuiz();}}
+function saveResult(score,total,pct){
+ history.unshift({subject:quizSubject,score,total,pct,date:new Date().toISOString()});save();submitted=true;renderAll();notify("Result saved! Your skill analysis is updated.");navigate("gaps");
+}
+function subjectScore(subject){const arr=history.filter(h=>h.subject===subject);return arr.length?Math.round(arr.reduce((s,h)=>s+h.pct,0)/arr.length):null}
+function getLevel(score){if(score===null)return{label:"Not assessed",cls:"mid"};if(score<50)return{label:"Needs improvement",cls:"weak"};if(score<80)return{label:"Developing",cls:"mid"};return{label:"Strong",cls:"strong"}}
+function renderSkills(){
+ const html=Object.keys(subjects).map(s=>{const score=subjectScore(s);const display=score===null?0:score;return `<div class="subject"><div class="subject-line"><span>${subjects[s].emoji} ${esc(s)}</span><span>${score===null?"Not assessed":score+"%"}</span></div><div class="bar"><span style="width:${display}%;${score!==null&&score<50?"background:linear-gradient(90deg,#e45b72,#f29aab)":score!==null&&score<80?"background:linear-gradient(90deg,#d99b35,#f2ca72)":""}"></span></div><div class="subject-foot"><span>${score===null?"Take a quiz to establish your baseline":getLevel(score).label}</span><button class="secondary" style="padding:5px 8px" onclick="startQuiz('${s}')">Practice</button></div></div>`}).join("");
+ document.getElementById("dashboardSkills").innerHTML=html;
+}
+function recommendationData(){
+ return Object.keys(subjects).map(s=>{const score=subjectScore(s);let title,desc,icon;if(score===null){title=`Take your ${s} baseline quiz`;desc="Start with a short assessment so we can personalize your learning path.";icon="🎯"}else if(score<50){title=`Review ${s} foundations`;desc="Work through a beginner lesson, then retry the quiz to check your progress.";icon="📘"}else if(score<80){title=`Practice ${s} problem-solving`;desc="Review missed questions and complete a focused practice session.";icon="🧠"}else{title=`Explore advanced ${s} challenges`;desc="Build on your strong result with harder examples and a mini project.";icon="🚀"}return{subject:s,score,title,desc,icon}}).sort((a,b)=>(a.score===null?-1:a.score)-(b.score===null?-1:b.score));}
+function renderRecs(){
+ const recs=recommendationData();
+ const render=r=>`<div class="rec"><div class="rec-icon">${r.icon}</div><div style="flex:1"><strong>${esc(r.title)}</strong><p>${esc(r.desc)}</p><span class="tag">${r.score===null?"READY TO START":r.score<50?"PRIORITY FOCUS":r.score<80?"NEXT STEP":"LEVEL UP"}</span></div><button class="secondary" onclick="startQuiz('${r.subject}')">Go →</button></div>`;
+ document.getElementById("dashboardRecs").innerHTML=recs.slice(0,3).map(render).join("");
+ document.getElementById("allRecs").innerHTML=recs.map(render).join("");
+}
+function renderActivity(){
+ const el=document.getElementById("recentActivity");
+ if(!history.length){el.innerHTML='<div class="empty">No quizzes yet. Take your first assessment to see your activity here.</div>';return;}
+ el.innerHTML=history.slice(0,4).map(h=>`<div class="activity"><div class="activity-icon">${subjects[h.subject]?.emoji||"✓"}</div><div><strong>${esc(h.subject)} quiz</strong><small>${new Date(h.date).toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"})}</small></div><div class="score">${h.pct}%</div></div>`).join("");
+}
+function renderGaps(){
+ document.getElementById("gapList").innerHTML=Object.keys(subjects).map(s=>{const score=subjectScore(s),level=getLevel(score);return `<div class="analysis-row"><div class="rec-icon">${subjects[s].emoji}</div><div class="grow"><strong>${esc(s)}</strong><p>${score===null?"Take a quiz to measure your current level.":score<50?"Prioritize the basics and practice with guided examples.":score<80?"Review mistakes and strengthen consistency.":"Great foundation — challenge yourself with advanced tasks."}</p>${score!==null?`<div class="bar" style="margin-top:11px"><span style="width:${score}%"></span></div>`:""}</div><span class="status ${level.cls}">${level.label}${score===null?"":" · "+score+"%"}</span><button class="secondary" onclick="startQuiz('${s}')">Assess</button></div>`}).join("");
+}
+function renderSubjects(){document.getElementById("subjectCards").innerHTML=Object.keys(subjects).map(s=>`<div class="topic card"><div class="emoji">${subjects[s].emoji}</div><h3>${esc(s)}</h3><p>${esc(subjects[s].description)}</p><div style="margin:13px 0">${subjects[s].topics.map(t=>`<div style="font-size:11px;color:var(--muted);padding:5px 0">• ${esc(t)}</div>`).join("")}</div><button class="primary" onclick="startQuiz('${s}')">Assess skills →</button></div>`).join("");}
+function renderProgress(){
+ const avg=history.length?Math.round(history.reduce((s,h)=>s+h.pct,0)/history.length):null;
+ document.getElementById("progressQuizzes").textContent=history.length;document.getElementById("progressAverage").textContent=avg===null?"—":avg+"%";document.getElementById("progressBest").textContent=history.length?Math.max(...history.map(h=>h.pct))+"%":"—";document.getElementById("progressSubjects").textContent=new Set(history.map(h=>h.subject)).size;
+ const el=document.getElementById("historyList");
+ el.innerHTML=history.length?history.map(h=>`<div class="activity"><div class="activity-icon">${subjects[h.subject]?.emoji||"✓"}</div><div><strong>${esc(h.subject)} assessment</strong><small>${new Date(h.date).toLocaleString()}</small></div><div class="score">${h.score}/${h.total} · ${h.pct}%</div></div>`).join(""):'<div class="empty">Your results will appear here after you finish a quiz.</div>';
+}
+function clearHistory(){if(confirm("Clear all saved quiz history from this browser?")){history=[];save();renderAll();notify("Quiz history cleared.");}}
+function renderAll(){
+ const count=history.length,avg=count?Math.round(history.reduce((s,h)=>s+h.pct,0)/count):null;
+ document.getElementById("statQuizzes").textContent=count;document.getElementById("statAverage").textContent=avg===null?"—":avg+"%";document.getElementById("statImprove").textContent=Object.keys(subjects).filter(s=>{const x=subjectScore(s);return x===null||x<80}).length;
+ renderSkills();renderRecs();renderActivity();renderGaps();renderSubjects();renderQuizChoices();renderProgress();
+}
+renderAll();renderQuiz();
+</script>
+
+<script>
+// SkillBridge AI: 10-level progressive learning system
+const skillBridgeQuestionBank = {
+Python: {
+2:[
+{q:"What does list(range(2, 6)) return?",opts:["[2, 3, 4, 5]","[2, 3, 4, 5, 6]","[1, 2, 3, 4, 5]","[6, 5, 4, 3, 2]"],a:0,why:"The stop value 6 is excluded.",topic:"Loops"},
+{q:"Which expression checks whether x is between 1 and 9 inclusive?",opts:["1 <= x <= 9","x >= 1 or x <= 9","1 < x < 9 only","x = 1..9"],a:0,why:"Python supports chained comparisons.",topic:"Conditionals"},
+{q:"What does 'hello'.upper() return?",opts:["Hello","HELLO","hello()","Error"],a:1,why:"upper() returns the string in uppercase.",topic:"Strings"}],
+3:[
+{q:"What is the value of 17 % 5?",opts:["2","3","3.4","5"],a:0,why:"The remainder after 17 divided by 5 is 2.",topic:"Operators"},
+{q:"Which structure is immutable?",opts:["List","Dictionary","Set","Tuple"],a:3,why:"A tuple cannot be changed after creation.",topic:"Collections"},
+{q:"What does enumerate(items) provide in a loop?",opts:["Only values","Index-value pairs","Sorted values","A copy of the list"],a:1,why:"enumerate yields each item's index and value.",topic:"Loops"}],
+4:[
+{q:"What is the result of bool('')?",opts:["True","False","None","Error"],a:1,why:"An empty string is falsy.",topic:"Types"},
+{q:"Which keyword returns a value from a function?",opts:["yieldonly","send","return","break"],a:2,why:"return sends a result back to the caller.",topic:"Functions"},
+{q:"What is a safe way to read a dictionary key that may be absent?",opts:["d.key","d.get('key')","d.find('key')","d.read('key')"],a:1,why:"get() can return a default instead of raising KeyError.",topic:"Dictionaries"}],
+5:[
+{q:"What does sorted([3,1,2]) return?",opts:["[3,1,2]","[1,2,3]","None","2"],a:1,why:"sorted returns a new sorted list.",topic:"Collections"},
+{q:"Which exception occurs when converting 'cat' with int('cat')?",opts:["TypeError","ValueError","KeyError","IndexError"],a:1,why:"The string has the wrong value format for an integer.",topic:"Exceptions"},
+{q:"What does a function's parameter represent?",opts:["An input variable","A loop exit","A module","A syntax error"],a:0,why:"Parameters receive input values when a function is called.",topic:"Functions"}],
+6:[
+{q:"What does [x for x in nums if x % 2 == 0] select?",opts:["Odd numbers","Even numbers","Negative numbers only","Every second item"],a:1,why:"The condition keeps values with remainder zero when divided by 2.",topic:"Comprehensions"},
+{q:"Which file mode appends to an existing file?",opts:["'r'","'w'","'a'","'x'"],a:2,why:"Append mode writes at the end without truncating existing content.",topic:"Files"},
+{q:"What is the purpose of __init__ in a class?",opts:["Sorts objects","Initializes a new instance","Deletes a class","Imports modules"],a:1,why:"__init__ initializes instance attributes.",topic:"Classes"}],
+7:[
+{q:"Why use `with open(...) as f`?",opts:["It auto-closes the file","It encrypts the file","It sorts the file","It prevents all errors"],a:0,why:"The context manager closes the file when the block exits.",topic:"Files"},
+{q:"What does `is` test?",opts:["Value equality only","Object identity","String length","Type conversion"],a:1,why:"is checks whether two references point to the same object.",topic:"Object model"},
+{q:"Which collection removes duplicate values?",opts:["List","Tuple","Set","String"],a:2,why:"Sets contain unique elements.",topic:"Collections"}],
+8:[
+{q:"What is the main benefit of a generator?",opts:["Always stores all results","Produces values lazily","Automatically sorts data","Runs only once per program"],a:1,why:"Generators yield values on demand, often saving memory.",topic:"Iterators"},
+{q:"What does `try...finally` guarantee in normal control flow?",opts:["The finally block is attempted","Exceptions disappear","The try block repeats","The program always returns 0"],a:0,why:"finally is used for cleanup whether or not an exception occurs.",topic:"Exceptions"},
+{q:"Which principle hides internal implementation behind a clear interface?",opts:["Encapsulation","Iteration","Indexing","Casting"],a:0,why:"Encapsulation bundles data and behavior and controls access.",topic:"OOP"}],
+9:[
+{q:"What is the average lookup time for a dictionary key?",opts:["O(1)","O(n²)","O(log n) always","O(n log n)"],a:0,why:"Hash-table dictionary lookup is average constant time.",topic:"Complexity"},
+{q:"Why are mutable default arguments often risky?",opts:["They are re-created every call","They may retain changes between calls","They cannot contain lists","They disable functions"],a:1,why:"A default object is created once and can be shared across calls.",topic:"Function design"},
+{q:"Which tool is best for isolating project dependencies?",opts:["Virtual environment","print()","A tuple","A for loop"],a:0,why:"Virtual environments keep project packages isolated.",topic:"Tooling"}],
+10:[
+{q:"What is the time complexity of binary search on a sorted list?",opts:["O(n)","O(log n)","O(n²)","O(1) in all cases"],a:1,why:"Each step halves the remaining search interval.",topic:"Algorithms"},
+{q:"What does a unit test verify?",opts:["A small component's expected behavior","Internet speed","Every possible user behavior","The computer's battery"],a:0,why:"Unit tests check focused units of code against expected results.",topic:"Testing"},
+{q:"Which design choice most improves maintainability?",opts:["One huge function","Meaningful names and small reusable functions","Duplicate logic","Hidden global state everywhere"],a:1,why:"Clear names and modular functions make code easier to test and change.",topic:"Software design"}]
+},
+Mathematics:{
+2:[
+{q:"Solve 4x = 28.",opts:["6","7","8","24"],a:1,why:"Divide both sides by 4: x = 7.",topic:"Algebra"},
+{q:"What is 15% of 200?",opts:["15","20","30","35"],a:2,why:"0.15 × 200 = 30.",topic:"Percentages"},
+{q:"What is the range of 4, 9, 2, 12?",opts:["8","9","10","14"],a:2,why:"Range is maximum minus minimum: 12 − 2 = 10.",topic:"Statistics"}],
+3:[
+{q:"Simplify 3a + 2a − a.",opts:["4a","5a","6a","a"],a:0,why:"Combine coefficients: 3 + 2 − 1 = 4.",topic:"Algebra"},
+{q:"A fair die is rolled. Probability of an even number?",opts:["1/6","1/3","1/2","2/3"],a:2,why:"Three of six outcomes are even.",topic:"Probability"},
+{q:"What is the area of a triangle with base 10 and height 6?",opts:["16","30","60","120"],a:1,why:"Area = ½ × base × height = 30.",topic:"Geometry"}],
+4:[
+{q:"If x + 9 = 14, what is x?",opts:["3","5","9","23"],a:1,why:"Subtract 9 from both sides.",topic:"Algebra"},
+{q:"What is the mean of 6, 8, 10?",opts:["8","9","10","24"],a:0,why:"(6 + 8 + 10) / 3 = 8.",topic:"Statistics"},
+{q:"What is the complement of a 35° angle to a right angle?",opts:["45°","55°","65°","145°"],a:1,why:"90° − 35° = 55°.",topic:"Geometry"}],
+5:[
+{q:"Expand 3(x + 4).",opts:["3x + 4","3x + 12","x + 12","7x"],a:1,why:"Multiply 3 by both terms.",topic:"Algebra"},
+{q:"If P(A)=0.25, what are the odds expressed as probability percentage?",opts:["2.5%","25%","40%","75%"],a:1,why:"0.25 corresponds to 25%.",topic:"Probability"},
+{q:"What is the slope between (1,2) and (3,8)?",opts:["2","3","4","6"],a:1,why:"Slope = (8−2)/(3−1) = 3.",topic:"Coordinate geometry"}],
+6:[
+{q:"Factor x² − 9.",opts:["(x−9)(x+1)","(x−3)(x+3)","(x−3)²","(x+9)(x−1)"],a:1,why:"This is a difference of squares.",topic:"Algebra"},
+{q:"What is the probability of rolling greater than 4 on a fair die?",opts:["1/6","1/3","1/2","2/3"],a:1,why:"Outcomes 5 and 6 give 2/6 = 1/3.",topic:"Probability"},
+{q:"What is the circumference of a circle of radius r?",opts:["πr²","2πr","πd²","r²/2"],a:1,why:"Circumference is 2πr.",topic:"Geometry"}],
+7:[
+{q:"Solve x² = 49 for real x.",opts:["7 only","−7 only","−7 or 7","49"],a:2,why:"Both −7 and 7 square to 49.",topic:"Equations"},
+{q:"What does standard deviation measure?",opts:["Central value only","Spread around the mean","Largest value only","Number of rows"],a:1,why:"Standard deviation describes dispersion around the mean.",topic:"Statistics"},
+{q:"What is the derivative of 5x?",opts:["5","x","5x²","0"],a:0,why:"The derivative of ax is a.",topic:"Calculus"}],
+8:[
+{q:"Evaluate 2³ × 2².",opts:["2⁵ = 32","2⁶ = 64","4⁵","16"],a:0,why:"When multiplying same bases, add exponents.",topic:"Exponents"},
+{q:"If two events are mutually exclusive, what is P(A and B)?",opts:["1","P(A)+P(B)","0","P(A)P(B) always"],a:2,why:"They cannot happen together.",topic:"Probability"},
+{q:"What is the integral of 2x with respect to x?",opts:["2","x² + C","2x² + C","x + C"],a:1,why:"An antiderivative of 2x is x² + C.",topic:"Calculus"}],
+9:[
+{q:"What is the determinant of [[2,0],[0,3]]?",opts:["0","5","6","9"],a:2,why:"The determinant is 2×3 − 0×0 = 6.",topic:"Linear algebra"},
+{q:"A normal distribution is typically symmetric around its…",opts:["minimum","mean","maximum","range"],a:1,why:"The normal curve is centered at its mean.",topic:"Statistics"},
+{q:"What is log₁₀(1000)?",opts:["2","3","10","100"],a:1,why:"10³ = 1000.",topic:"Logarithms"}],
+10:[
+{q:"What is the limit of (x²−1)/(x−1) as x approaches 1?",opts:["0","1","2","Undefined"],a:2,why:"Factor to x+1 for x≠1, then evaluate at 1.",topic:"Limits"},
+{q:"If vectors are perpendicular, their dot product is…",opts:["−1 always","0","1 always","Their lengths added"],a:1,why:"Perpendicular vectors have zero dot product.",topic:"Vectors"},
+{q:"Which measure is least affected by a single extreme outlier?",opts:["Mean","Median","Range","Maximum"],a:1,why:"The median depends on order, not the magnitude of extremes.",topic:"Statistics"}]
+},
+"Data Structures":{
+2:[
+{q:"Which operation removes the most recently added stack item?",opts:["enqueue","pop","dequeue","peek"],a:1,why:"A stack's pop operation removes its top item.",topic:"Stacks"},
+{q:"Which queue principle is used in a normal FIFO queue?",opts:["Last in, first out","First in, first out","Random order","Sorted order"],a:1,why:"The first item inserted is the first removed.",topic:"Queues"},
+{q:"What is the index of the first element in a typical zero-indexed array?",opts:["−1","0","1","Depends on value"],a:1,why:"Most common programming arrays start at index 0.",topic:"Arrays"}],
+3:[
+{q:"Which linked list allows traversal in both directions?",opts:["Singly linked list","Doubly linked list","Circular array","Stack"],a:1,why:"A doubly linked list stores links to next and previous nodes.",topic:"Linked lists"},
+{q:"What does a stack's peek operation do?",opts:["Removes the top","Reads the top without removing it","Sorts all items","Clears the stack"],a:1,why:"peek inspects the top element without popping it.",topic:"Stacks"},
+{q:"Which queue operation inserts an item?",opts:["dequeue","enqueue","pop","peek"],a:1,why:"enqueue adds an item to the queue.",topic:"Queues"}],
+4:[
+{q:"In a binary tree, how many children can a node have at most?",opts:["1","2","3","Unlimited"],a:1,why:"A binary tree node has at most two children.",topic:"Trees"},
+{q:"Which search requires sorted data to halve the search interval?",opts:["Linear search","Binary search","Depth-first search","Hash lookup"],a:1,why:"Binary search depends on sorted order.",topic:"Searching"},
+{q:"What is the root node?",opts:["A node with no parent","A node with no children","Always the smallest node","Any leaf"],a:0,why:"The root is the top node and has no parent.",topic:"Trees"}],
+5:[
+{q:"Which structure is commonly used for undo operations?",opts:["Stack","Queue","Graph","Sorted array only"],a:0,why:"Undo commonly reverses the most recent action first.",topic:"Stacks"},
+{q:"What does a leaf node have?",opts:["No children","Two parents","A required left child","No data"],a:0,why:"A leaf is a node with no children.",topic:"Trees"},
+{q:"What is the worst-case time of linear search in n items?",opts:["O(1)","O(log n)","O(n)","O(n²)"],a:2,why:"Every element may need to be checked.",topic:"Searching"}],
+6:[
+{q:"What does a graph edge represent?",opts:["A connection between vertices","An array index","A queue front","A tree root only"],a:0,why:"Edges represent relationships or connections between vertices.",topic:"Graphs"},
+{q:"Which traversal explores a path deeply before backtracking?",opts:["BFS","DFS","Binary search","Merge sort"],a:1,why:"Depth-first search follows a path as far as possible.",topic:"Graphs"},
+{q:"Which structure is most directly used by BFS?",opts:["Queue","Stack only","Heap only","Tuple"],a:0,why:"BFS uses a queue to process nodes by distance layer.",topic:"Graphs"}],
+7:[
+{q:"What is a hash collision?",opts:["Two keys map to the same slot","A tree has two roots","A queue becomes empty","An array is sorted"],a:0,why:"Different keys can produce the same hash bucket.",topic:"Hashing"},
+{q:"What is the average lookup complexity of a well-sized hash table?",opts:["O(1)","O(log n)","O(n log n)","O(n²)"],a:0,why:"Hashing usually provides average constant-time lookup.",topic:"Hashing"},
+{q:"Which sorting algorithm repeatedly swaps adjacent out-of-order items?",opts:["Merge sort","Bubble sort","Counting sort","Heap sort"],a:1,why:"Bubble sort compares and swaps neighboring elements.",topic:"Sorting"}],
+8:[
+{q:"What is merge sort's typical time complexity?",opts:["O(n)","O(log n)","O(n log n)","O(n²)"],a:2,why:"It performs linear merging over logarithmic levels.",topic:"Sorting"},
+{q:"Which structure efficiently returns the highest-priority item?",opts:["Priority queue","Plain stack","Unsorted linked list only","Binary search"],a:0,why:"A priority queue removes items by priority, often implemented with a heap.",topic:"Heaps"},
+{q:"In a min-heap, where is the smallest item found?",opts:["At the root","At the last leaf always","In the middle only","Anywhere without rule"],a:0,why:"A min-heap maintains the minimum at the root.",topic:"Heaps"}],
+9:[
+{q:"What is the purpose of a topological ordering?",opts:["Order vertices in a DAG respecting edges","Sort an array by color","Balance every binary tree","Find a hash collision"],a:0,why:"A topological order places each directed edge's source before its destination.",topic:"Graphs"},
+{q:"Which condition makes binary search tree lookup efficient on average?",opts:["Tree height stays relatively small","Every node has 10 children","All values are equal","It stores no ordering"],a:0,why:"Search time follows tree height.",topic:"Trees"},
+{q:"What does Big-O notation describe?",opts:["Growth of resource use with input size","Exact run time on every computer","Only memory addresses","The number of variables"],a:0,why:"Big-O describes asymptotic growth such as time or space.",topic:"Complexity"}],
+10:[
+{q:"Which algorithm finds shortest paths from one source with non-negative edge weights?",opts:["Dijkstra's algorithm","Bubble sort","Binary search","DFS always"],a:0,why:"Dijkstra's algorithm solves single-source shortest paths for non-negative weights.",topic:"Graph algorithms"},
+{q:"What is the key idea of dynamic programming?",opts:["Reuse solutions to overlapping subproblems","Always choose a random move","Sort by swapping neighbors","Store only one variable"],a:0,why:"Dynamic programming stores/reuses subproblem results.",topic:"Algorithms"},
+{q:"Why is an adjacency list often preferred for a sparse graph?",opts:["It stores only existing neighbors/edges","It always uses n² space","It sorts vertices automatically","It removes all cycles"],a:0,why:"An adjacency list uses space proportional to vertices plus edges.",topic:"Graph representation"}]
+}
+};
+const skillBridgeLevels = JSON.parse(localStorage.getItem("skillbridgeUnlocked") || "{}");
+Object.keys(subjects).forEach(s=>{ if(!skillBridgeLevels[s]) skillBridgeLevels[s]=1; });
+let skillBridgeCurrentLevel = 1;
+function skillBridgeLevelTitle(n){return ["","Beginner","Foundation","Developing","Intermediate","Applied","Upper Intermediate","Advanced","Expert","Challenge","Mastery"][n] || "Level "+n;}
+function skillBridgeQs(subject,level){
+ if(level===1) return questions[subject];
+ return skillBridgeQuestionBank[subject]?.[level] || [];
+}
+const skillBridgeOriginalNavigate = navigate;
+window.startQuiz = function(subject, level){
+ quizSubject = subject || "Python";
+ skillBridgeCurrentLevel = Number(level || skillBridgeLevels[quizSubject] || 1);
+ if(skillBridgeCurrentLevel > (skillBridgeLevels[quizSubject] || 1)){notify("Score 80% or higher in the previous level to unlock this level.");return;}
+ qIndex=0; answers=[]; submitted=false; navigate("quiz"); renderQuiz();
+};
+window.renderQuiz = function(){
+ const panel=document.getElementById("quizPanel");
+ if(!quizSubject){panel.innerHTML='<div class="card"><h2>Choose a subject</h2><p>Open Subjects and select a level to begin.</p></div>';return;}
+ const qs=skillBridgeQs(quizSubject,skillBridgeCurrentLevel);
+ if(!qs || !qs.length){panel.innerHTML='<div class="card"><h2>Quiz unavailable</h2><p>Please select a subject and level again.</p></div>';return;}
+ const title=skillBridgeLevelTitle(skillBridgeCurrentLevel);
+ if(submitted){
+  const score=answers.filter((a,i)=>a===qs[i].a).length, pct=Math.round(score/qs.length*100);
+  panel.innerHTML=`<div class="result"><div class="eyebrow">LEVEL ${skillBridgeCurrentLevel} COMPLETE</div><div class="big">${pct}%</div><h2>${pct>=80?"Excellent work!":pct>=50?"Good progress — review and retry":"Keep practicing!"}</h2><p>You answered <strong>${score} of ${qs.length}</strong> questions correctly in ${esc(quizSubject)} · Level ${skillBridgeCurrentLevel}: ${title}.</p><p>${pct>=80&&skillBridgeCurrentLevel<10?"You passed! Saving this result unlocks the next level.":pct<80?"Score at least 80% to unlock the next level. Review the explanations and try again.":"You completed all 10 levels for this subject!"}</p><button class="primary" onclick="saveResult(${score},${qs.length},${pct})">Save result & update skill gaps</button> <button class="secondary" onclick="startQuiz('${quizSubject}',${skillBridgeCurrentLevel})">Retry this level</button><div style="text-align:left;margin-top:22px">${qs.map((q,i)=>`<div class="rec"><div class="rec-icon">${answers[i]===q.a?"✓":"↻"}</div><div><strong>${i+1}. ${esc(q.q)}</strong><p>Your answer: ${esc(q.opts[answers[i]]??"Not answered")} · Correct: ${esc(q.opts[q.a])}</p><p>${esc(q.why)}</p></div></div>`).join("")}</div></div>`;
+  return;
+ }
+ const q=qs[qIndex];
+ panel.innerHTML=`<div class="card-head"><div><h2>${subjects[quizSubject].emoji} ${esc(quizSubject)} · Level ${skillBridgeCurrentLevel}</h2><p>${title} · Question ${qIndex+1} of ${qs.length}</p></div><span class="pill">LEVEL ${skillBridgeCurrentLevel} / 10</span></div><div class="bar"><span style="width:${qIndex/qs.length*100}%"></span></div><div class="quiz-meta"><span>Topic: ${esc(q.topic)}</span><span>${Math.round(qIndex/qs.length*100)}% complete</span></div><h2 class="question">${qIndex+1}. ${esc(q.q)}</h2><div class="options">${q.opts.map((o,i)=>`<button class="option ${answers[qIndex]===i?"selected":""}" onclick="chooseOption(${i})"><strong style="color:var(--brand);margin-right:10px">${String.fromCharCode(65+i)}.</strong>${esc(o)}</button>`).join("")}</div><div class="quiz-actions"><span class="notice">Score 80%+ to unlock the next level.</span><button class="primary" onclick="nextQuestion()">${qIndex===qs.length-1?"Finish quiz":"Next question →"}</button></div>`;
+};
+window.saveResult=function(score,total,pct){
+ const lvl=skillBridgeCurrentLevel;
+ history.unshift({subject:quizSubject,level:lvl,levelName:skillBridgeLevelTitle(lvl),score,total,pct,date:new Date().toISOString()});
+ if(pct>=80 && lvl<10 && (skillBridgeLevels[quizSubject]||1)===lvl) skillBridgeLevels[quizSubject]=lvl+1;
+ localStorage.setItem("skillbridgeUnlocked",JSON.stringify(skillBridgeLevels));
+ save(); submitted=true; renderAll();
+ notify(pct>=80&&lvl<10?`Passed! Level ${lvl+1} unlocked.`:pct<80?"Result saved. Review and retry this level.":"Congratulations! You completed all 10 levels.");
+ navigate("gaps");
+};
+window.renderSubjects=function(){
+ document.getElementById("subjectCards").innerHTML=Object.keys(subjects).map(s=>{
+  const max=skillBridgeLevels[s]||1;
+  return `<div class="topic card"><div class="emoji">${subjects[s].emoji}</div><h3>${esc(s)}</h3><p>${esc(subjects[s].description)}</p><div style="margin:13px 0">${subjects[s].topics.map(t=>`<div style="font-size:11px;color:var(--muted);padding:5px 0">• ${esc(t)}</div>`).join("")}</div><div style="border-top:1px solid var(--line);padding-top:12px;margin-top:10px"><strong style="font-size:11px">10 PROGRESSIVE LEVELS</strong><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:9px">${Array.from({length:10},(_,i)=>i+1).map(l=>`<button class="secondary" style="padding:8px 9px;${l>max?'opacity:.4;cursor:not-allowed':''}" ${l>max?'disabled title="Score 80%+ in the previous level to unlock"':`onclick="startQuiz('${s}',${l})"`}>${l>max?'🔒 ':''}${l}</button>`).join("")}</div><p style="font-size:10px;margin-bottom:0">Pass with 80% or higher to unlock the next level.</p></div></div>`;
+ }).join("");
+};
+window.renderQuizChoices=function(){
+ const el=document.getElementById("quizChoices"); if(!el)return;
+ el.innerHTML=Object.keys(subjects).map(s=>`<div class="topic card"><div class="emoji">${subjects[s].emoji}</div><h3>${esc(s)}</h3><p>Continue at level ${skillBridgeLevels[s]||1} of 10.</p><button class="primary" onclick="startQuiz('${s}',${skillBridgeLevels[s]||1})">Continue learning →</button></div>`).join("");
+};
+// Add lecture cards to the existing Learning Resources page, using subject-specific YouTube search links.
+(function addLectureLibrary(){
+ const section=document.getElementById("page-resources"); if(!section)return;
+ const lectures=[
+ {subject:"Python",emoji:"🐍",desc:"Beginner Python, functions, collections, OOP and projects",query:"Python programming full course beginner functions lists dictionaries"},
+ {subject:"Mathematics",emoji:"📐",desc:"Algebra, probability, statistics and calculus tutorials",query:"algebra probability statistics calculus full course"},
+ {subject:"Data Structures",emoji:"🌳",desc:"Arrays, linked lists, stacks, queues, trees, graphs and algorithms",query:"data structures algorithms full course arrays linked lists stacks queues trees graphs"}
+ ];
+ const wrap=document.createElement("div");wrap.className="welcome";wrap.style.marginTop="26px";
+ wrap.innerHTML='<div><div class="eyebrow">WATCH & LEARN</div><h1>Video lecture library</h1><p>Choose a subject to find video lessons. These links open YouTube search results so you can pick a lecture that matches your level.</p></div>';
+ const grid=document.createElement("div");grid.className="resource-grid";
+ lectures.forEach(v=>{const card=document.createElement("div");card.className="resource card";card.innerHTML=`<div class="emoji">${v.emoji}</div><h3>${v.subject} video lectures</h3><p>${v.desc}</p><a class="primary" style="display:inline-block;padding:11px 14px;border-radius:10px;text-decoration:none;color:white;background:var(--brand)" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/results?search_query=${encodeURIComponent(v.query)}">Watch lectures on YouTube ↗</a>`;grid.appendChild(card);});
+ section.appendChild(wrap);section.appendChild(grid);
+})();
+localStorage.setItem("skillbridgeUnlocked",JSON.stringify(skillBridgeLevels));
+renderAll();renderQuiz();
+</script>
+
+</body>
+</html>
